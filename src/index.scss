@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap");
+
+$sans-font: "IBM Plex Sans", sans-serif;
+$serif-font: "IBM Plex Serif", serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10pt;
+  font-family: $sans-font;
+}
+
+body {
+  max-width: 7.5in;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+dt,
+.statbox {
+  font-family: $serif-font;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+#header {
+  text-align: center;
+
+  address {
+    display: grid;
+    grid: auto-flow / 1fr 50% 1fr;
+    margin-bottom: 0.5rem;
+
+    .phone {
+      justify-self: left;
+    }
+    .email {
+      justify-self: right;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+dl {
+  display: grid;
+  grid: auto-flow / 13rem 1fr;
+}
+dd {
+  margin-inline-start: 0;
+}
+dt {
+  font-weight: bold;
+}
+
+.statbox {
+  display: grid;
+  grid: auto-flow / 60% 40%;
+  align-items: center;
+  .company-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .title {
+    margin-left: 1rem;
+    font-style: italic;
+  }
+  .date {
+    margin-left: 0.5rem;
+    font-style: italic;
+  }
+  .left {
+    justify-self: left;
+  }
+  .right {
+    justify-self: right;
+  }
+}
+
+.company {
+  margin-bottom: 0.5rem;
+}
