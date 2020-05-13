@@ -24,10 +24,11 @@ body {
   margin-right: auto;
   margin-left: auto;
   margin-top: 0;
+  margin-bottom: 0;
 
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.36;
 }
 
 h1,
@@ -44,7 +45,7 @@ h1,
 h2,
 h3,
 dt,
-.statbox {
+.company-name {
   font-family: $serif-font;
 }
 
@@ -66,6 +67,7 @@ ul ol {
   text-align: center;
 
   address {
+    font-style: normal;
     display: grid;
     grid: auto-flow / 1fr 50% 1fr;
     margin-bottom: 0.5rem;
@@ -96,28 +98,37 @@ dt {
 
 .statbox {
   display: grid;
-  grid: auto-flow / 60% 40%;
-  align-items: center;
+  grid: auto-flow / repeat(2, max-content) 1fr max-content;
+  align-items: end;
   .company-name {
     font-size: 1.1rem;
     font-weight: bold;
   }
+  .company-name {
+    margin-right: 1rem;
+  }
   .title {
-    margin-left: 1rem;
     font-style: italic;
   }
   .date {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     font-style: italic;
   }
-  .left {
-    justify-self: left;
-  }
-  .right {
+  & :nth-child(3), & :nth-child(4) {
     justify-self: right;
   }
 }
 
 .company {
   margin-bottom: 0.5rem;
+}
+
+.section-title {
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: block
+}
+
+.mb-0 {
+  margin-bottom: 0;
 }

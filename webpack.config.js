@@ -26,7 +26,7 @@ module.exports = (env, argv) => ({
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     new GenPDFPlugin({
-      enabled: argv.mode === 'production',
+      // enabled: argv.mode === 'production',
     }),
   ],
   module: {

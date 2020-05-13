@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -15,5 +17,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": [path.join(__dirname, "GenPDFPlugin.js")] }]
   },
 };

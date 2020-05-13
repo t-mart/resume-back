@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const path = require('path');
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 const puppeteer = require('puppeteer');
 
 class GenPDFPlugin {
@@ -28,7 +27,7 @@ class GenPDFPlugin {
       console.log('Generating PDF...');
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
-      await page.goto(sourceFileUrl, { waitUntil: 'networkidle2' });
+      await page.goto(sourceFileUrl, { waitUntil: 'load' });
       await page.pdf({
         path: pdfPath,
         format: 'Letter',

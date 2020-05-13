@@ -19,7 +19,7 @@
 
   <main>
     <section id="skills">
-      <h2>Skills</h2>
+      <h2 class="section-title">Skills</h2>
       <dl>
         <dt>Languages</dt>
         <dd>Python, Javascript, Java + Spring, shell, SQL, HTML, CSS</dd>
@@ -34,120 +34,124 @@
         <dd>React, Django, Sass, Static Site Generators, Visualization Libraries, Toolchains</dd>
 
         <dt>Data Stores</dt>
-        <dd>MySQL, Postgres, Redis, SQL, Managed Solutions</dd>
+        <dd>MySQL, BigQuery, Postgres, Redis, SQL, Managed Solutions</dd>
 
         <dt>Dev Ops</dt>
         <dd>CI/CD, Secret Management, Alerting, Performance/Load Testing, TLS, DNS</dd>
       </dl>
     </section>
 
-    <h2 id="experience">Experience</h2>
+    <section id="experience" >
+      <h2 class="section-title">Experience</h2>
 
-    <div class="company">
-      <div class="statbox">
-        <div class="left">
+      <div class="company">
+        <div class="statbox">
           <span class="company-name">Raid Stats</span>
           <span class="title">Project Developer</span>
-        </div>
-        <div class="right">
           <span class="location">Austin, TX</span>
-          <span class="date">December 2019 - April 2020</span>
+          <span class="date">2019 - 2020</span>
         </div>
+        <ul>
+          <li>Designed virtual currency analysis web app for Twitch game streamer with average 300 concurrent users.
+          </li>
+          <li>Wrote asynchronous IRC bot in Python to monitor gold transactions and persisted events to GCS BigQuery.</li>
+          <li>Automated hourly Hugo site build with GitLab CI/CD on hourly schedule.</li>
+          <li>Visualized "gold" economy with stock charts from Highcharts.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Designed virtual currency analysis web app for Twitch game streamer with average 300 concurrent users.</li>
-        <li>Wrote asynchronous IRC bot in Python to monitor gold transactions, persisted events to GCS BigQuery, GitLab
-          CI/CD on hourly schedule to rebuild user-facing Hugo site.</li>
-        <li>Visualized "gold" economy with stock charts from Highcharts.</li>
-      </ul>
-    </div>
 
-    <div class="company">
-      <div class="statbox">
-        <div class="left">
+      <div class="company">
+        <div class="statbox">
           <span class="company-name">RetailMeNot</span>
           <span class="title">Software Engineer</span>
-        </div>
-        <div class="right">
           <span class="location">Austin, TX</span>
-          <span class="date">June 2015 - January 2019</span>
+          <span class="date">2015 - 2019</span>
         </div>
+        <ul>
+          <li class="project">
+            RxSaver - Offers discounts on prescription drugs
+            <ul>
+              <li>Pipelined prescription drug data from a 3rd party with Spring Batch.</li>
+              <li>Pushed infrastructure to Google Cloud, one of the first company projects to do so.</li>
+            </ul>
+          </li>
+          <li class="project">
+            Loyalty Card Service - Clips digital coupons to user loyalty cards for in-store savings
+            <ul>
+              <li>Modeled digital coupon data and ingestion jobs for RMN content management system.</li>
+              <li>Worked closely with vendor over many months to discuss product features, API usage, and support.</li>
+              <li>Allowed user and card registration and coupon clipping with service-to-service API.</li>
+              <li>Automated test runs, Docker image builds, and ElasticBeanstalk deployments on TeamCity.</li>
+            </ul>
+          </li>
+          <li class="project">
+            Promotion Service - Issues one-time-use promotional codes to users
+            <ul>
+              <li>Prefetched 3rd-party codes into Redis cache.</li>
+              <li>Dockerized Java application for ElasticBeanstalk on mulitple environments.</li>
+              <li>Blueprinted application with CloudFormation, implemented zero-downtime deployment for build agents.
+              </li>
+              <li>Load-tested to ensure robustness through peak holiday times.</li>
+            </ul>
+          </li>
+          <li class="project">
+            Einstein - Manages email and mobile push campaigns for marketing team
+            <ul>
+              <li>Produced personalized emails from paid, curated and machine-learned content for daily ~6MM users.</li>
+              <li>Designed welcome push implementation, a campaign to onboard users to phone app over a series of days.
+              </li>
+              <li>Exposed API for service-to-service and web application consumption.</li>
+            </ul>
+          </li>
+          <li>Mentored full-time and intern employees with project introductions, weekly check-ins, and technical
+            guidance.</li>
+        </ul>
       </div>
-      <ul>
-        <li class="project">
-          RxSaver - Offers discounts on prescription drugs
-          <ul>
-            <li>Pipelined prescription drug data from a 3rd party with Spring Batch.</li>
-            <li>Pushed infrastructure to Google Cloud, one of the first company projects to do so.</li>
-          </ul>
-        </li>
-        <li class="project">
-          Loyalty Card Service - Clips digital coupons to user loyalty cards for in-store savings.
-          <ul>
-            <li>Built digital coupon data models and ingestion jobs for RMN content management system.</li>
-            <li>Worked closely with vendor over many months to discuss product features, API usage, and support.</li>
-            <li>Allowed user and card registration and coupon clipping with service-to-service API.</li>
-            <li>Automated test runs, Docker image builds, and ElasticBeanstalk deployments on TeamCity.</li>
-          </ul>
-        </li>
-        <li class="project">
-          Promotion Service - Issues single-use promotional codes to users from internal and external sources
-          <ul>
-            <li>Prefetched 3rd-party codes into Redis cache.</li>
-            <li>Dockerized Java application for ElasticBeanstalk on mulitple environments.</li>
-            <li>Blueprinted application with CloudFormation, implemented zero-downtime deployment for build agents.</li>
-            <li>Load-tested to ensure robustness through peak holiday times.</li>
-          </ul>
-        </li>
-        <li class="project">
-          Einstein - Manages email and push campaigns for marketing team
-          <ul>
-            <li>Produced personalized emails from paid, curated and machine-learned content for daily ~6MM users.</li>
-            <li>Designed welcome push implementation, a campaign to onboard users to phone app over a series of days.
-            </li>
-            <li>Exposed API for service-to-service and web application consumption.</li>
-          </ul>
-        </li>
-        <li>Mentored 3 employees. Attracted intern to team with pitch and guided through summer project.</li>
-      </ul>
-    </div>
 
-    <div class="company">
-      <div class="statbox">
-        <div class="left">
+      <div class="company">
+        <div class="statbox">
           <span class="company-name">Yelp</span>
           <span class="title">Software Engineering Intern</span>
-        </div>
-        <div class="right">
           <span class="location">San Francisco, CA</span>
-          <span class="date">Summer 2013</span>
+          <span class="date">2013</span>
         </div>
+        <ul>
+          <li>Ingested CPC and CPM events, triggered SNS messages, and queued in SQS for consumers such as
+            ElasticSearch.
+          </li>
+          <li>Wrote Gossip, a pub/sub tool that emitted SNS messages to SQS queues.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Wrote Gossip, a pub/sub tool that emitted SNS messages to SQS queues.</li>
-        <li>Fed impression and click events into ElasticSearch.</li>
-        <li>Gained experience with online advertising models (CPC, CPM, and others).</li>
-      </ul>
-    </div>
 
-    <h2 id="education">Education</h2>
+    </section>
 
-    <div class="company">
-      <div class="statbox">
-        <div class="left">
-          <span class="company-name">Georgia Institute of Technology</span>
-          <span class="title">B.S. Computer Science</span>
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="company">
+        <div class="statbox">
+            <span class="company-name">Georgia Institute of Technology</span>
+            <span class="title">B.S. Computer Science</span>
+            <span class="location">Atlanta, GA</span>
+            <span class="date">Graduated 2015</span>
         </div>
-        <div class="right">
-          <span class="location">Atlanta, GA</span>
-          <span class="date">Graduated May 2015</span>
-        </div>
+        <ul>
+          <li>Information Internetworks and Systems & Architecture specialization</li>
+          <li>GreyHat InfoSec Club staff</li>
+        </ul>
       </div>
-      <ul>
-        <li>Information Internetworks and Systems & Architecture Specialization</li>
-        <li>GreyHat InfoSec Club Staff</li>
-      </ul>
-    </div>
+    </section>
+
+    <section id="interests">
+      <h2 class="section-title">Interests</h2>
+
+      <div class="company mb-0">
+        <ul class="mb-0">
+          <li>Gardening, fermentation, cooking, weightlifting, Spanish language</li>
+          <li>Woodworking business providing gardening beds from CAD models</li>
+        </ul>
+      </div>
+    </section>
 
   </main>
 </body>
