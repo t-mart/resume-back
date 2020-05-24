@@ -2,7 +2,7 @@
 .paper {
   height: 11in;
   width: 8.5in;
-  padding: 0.5in;
+  padding: 0.75in;
   margin: 1rem auto;
   border: 1px solid;
   box-shadow: 4px 4px 0 gray;
@@ -17,8 +17,8 @@
 
 .margin-lines {
   border: 1px dotted #aaa;
-  height: calc(10in);
-  width: calc(7.5in);
+  height: calc(9.5in);
+  width: calc(7in);
   position: absolute;
   pointer-events: none;
 }
@@ -29,8 +29,8 @@
 }
 
 .contents {
-  height: calc(10in);
-  width: calc(7.5in);
+  height: calc(9.5in);
+  width: calc(7in);
 }
 
 *,
@@ -42,7 +42,7 @@
 html {
   font-size: 10pt;
   font-family: "IBM Plex Serif", serif;
-  line-height: 1.32rem;
+  line-height: 1.3rem;
   font-weight: 400;
 }
 
@@ -66,7 +66,7 @@ ul, ol, dl {
 
 .section-title, .section-content, .company {
   margin-top: 0;
-  margin-bottom: 0.33rem;
+  margin-bottom: 0.27rem;
 }
 
 .mb-0 {

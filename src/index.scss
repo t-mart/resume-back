@@ -2,7 +2,7 @@
 
 $paper-height: 11in;
 $paper-width: 8.5in;
-$paper-margin: 0.5in;
+$paper-margin: 0.75in;
 
 $font-family: "IBM Plex Serif", serif;
 $font-size: 10pt; // font size
@@ -10,8 +10,8 @@ $base-font-weight: 400;
 $bold-font-weight: 700;
 
 // Play with these if needed to minmax onto 1 page
-$line-height: 1.32rem; // vert dist between lines
-$vspacer: 0.33rem; // vert dist between various elements
+$line-height: 1.3rem; // vert dist between lines
+$vspacer: 0.27rem; // vert dist between various elements
 
 // 1in = 96px.
 // So, for pixel checking in devtools, here are some values
