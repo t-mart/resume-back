@@ -5,7 +5,7 @@ $paper-width: 8.5in;
 $paper-margin: 0.75in;
 
 $font-family: "IBM Plex Serif", serif;
-$font-size: 10pt; // font size
+$font-size: 10pt;
 $base-font-weight: 400;
 $bold-font-weight: 700;
 
@@ -40,7 +40,9 @@ $contents-width: calc(#{$paper-width - 2 * $paper-margin});
   height: $contents-height;
   width: $contents-width;
   position: absolute;
-  // make this a non-pointer-selectable element (otherwise, can't highlight text underneath)
+  // make this a non-pointer-selectable element
+  // this is needed because this element is positioned absolutely and on top of the contents
+  // if this is not here, then things like text highlighting can't be done with mouse on contents
   pointer-events: none;  
 
 	@media print {
