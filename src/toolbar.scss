@@ -1,0 +1,18 @@
+.toolbar {
+	@media print {
+		display: none;
+    }
+
+    background-color: #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.control-group {
+    width: 8.5in;
+    margin: 0 auto;
+    display: grid;
+    grid: auto-flow / repeat(2, 1fr);
+    justify-items: center;
+}

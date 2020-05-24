@@ -20,7 +20,7 @@ $vspacer: 0.27rem; // vert dist between various elements
 $contents-height: calc(#{$paper-height - 2 * $paper-margin});
 $contents-width: calc(#{$paper-width - 2 * $paper-margin});
 
-.paper {
+#paper {
   height: $paper-height;
   width: $paper-width;
   padding: $paper-margin;
@@ -35,22 +35,23 @@ $contents-width: calc(#{$paper-width - 2 * $paper-margin});
 	}
 }
 
-.margin-lines {
-  border: 1px dotted #aaa;
+#margin-lines {
+  border: 2px dotted #aaa;
   height: $contents-height;
   width: $contents-width;
   position: absolute;
   // make this a non-pointer-selectable element
   // this is needed because this element is positioned absolutely and on top of the contents
   // if this is not here, then things like text highlighting can't be done with mouse on contents
-  pointer-events: none;  
+  pointer-events: none;
+  z-index: 100;
 
 	@media print {
 		display: none;
-	}
+  }
 }
 
-.contents {
+#contents {
   height: $contents-height;
   width: $contents-width;
 }

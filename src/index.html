@@ -8,9 +8,21 @@
 </head>
 
 <body>
-  <div class="paper">
-    <div class="margin-lines"></div>
-    <div class="contents">
+  <div class="toolbar">
+    <div class="control-group">
+      <div>
+        <label for="show-margins">Show Margins</label>
+        <input type="checkbox" id="show-margins">
+      </div>
+      <div>
+        <span id="content-fits">✔️ All content fits within margins</span>
+        <span id="content-doesnt-fit" hidden>❌ Content does not fit within margins</span>
+      </div>
+    </div>
+  </div>
+  <div id="paper">
+    <div id="margin-lines"></div>
+    <div id="contents">
       <header id="header">
         <h1 class="section-title">Tim Martin</h1>
         <address class="section-content">
@@ -156,7 +168,7 @@
           new pages, always null any ultimate margin-bottom rules! -->
           <ul class="section-content mb-0">
             <li>Gardening, fermentation, cooking, bread baking, weightlifting, Spanish language</li>
-            <li>Woodworking business providing gardening bed frames from CAD models</li>
+            <li>Woodworking business providing garden bed frames from CAD models</li>
           </ul>
         </section>
       </main>

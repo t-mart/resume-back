@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400&display=swap);
-.paper {
+#paper {
   height: 11in;
   width: 8.5in;
   padding: 0.75in;
@@ -8,27 +8,28 @@
   box-shadow: 4px 4px 0 gray;
 }
 @media print {
-  .paper {
+  #paper {
     border: none;
     box-shadow: none;
     margin: 0;
   }
 }
 
-.margin-lines {
-  border: 1px dotted #aaa;
+#margin-lines {
+  border: 2px dotted #aaa;
   height: calc(9.5in);
   width: calc(7in);
   position: absolute;
   pointer-events: none;
+  z-index: 100;
 }
 @media print {
-  .margin-lines {
+  #margin-lines {
     display: none;
   }
 }
 
-.contents {
+#contents {
   height: calc(9.5in);
   width: calc(7in);
 }
@@ -127,4 +128,23 @@ dt {
 }
 .position-statbox :nth-child(3), .position-statbox :nth-child(4) {
   justify-self: right;
+}
+.toolbar {
+  background-color: #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+@media print {
+  .toolbar {
+    display: none;
+  }
+}
+
+.control-group {
+  width: 8.5in;
+  margin: 0 auto;
+  display: grid;
+  grid: auto-flow/repeat(2, 1fr);
+  justify-items: center;
 }

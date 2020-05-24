@@ -1,4 +1,5 @@
 import './index.scss';
+import './toolbar.scss';
 
 function getElementBottomRight(element: Element, includeBorderAndMargin: boolean) {
   let {
@@ -31,32 +32,65 @@ function elementIsTooBig(element: Element, refElement: Element) {
 
   const rightBleeds = (refElementBR.right - elementBR.right) < 0;
   const bottomBleeds = (refElementBR.bottom - elementBR.bottom) < 0;
+  const doesntHaveChildren = element.childElementCount === 0;
 
-  if (rightBleeds || bottomBleeds) {
-    return true;
-  }
-  return false;
+  return doesntHaveChildren && (rightBleeds || bottomBleeds);
 }
 
 function highlightBigElements() {
-  const refElement = document.querySelector('.contents');
+  const refElement = document.querySelector('#contents');
+  let hasBigElement = false;
   if (!refElement) {
     throw new Error('couldn\'t find reference element');
   }
-  document.querySelectorAll('.contents *').forEach((element) => {
-    if (element.childElementCount > 0) {
-      return;
-    }
+  document.querySelectorAll('#contents *').forEach((element) => {
     if (elementIsTooBig(element, refElement)) {
+      hasBigElement = true;
       const e = element as HTMLElement;
-      console.log(e);
-      e.style.backgroundColor = 'palevioletred';
+      e.style.backgroundColor = '#d62728';
     }
   });
+  return hasBigElement;
+}
+
+const marginLines = document.getElementById('margin-lines');
+const showMarginsInput = document.getElementById('show-margins') as HTMLInputElement;
+const fitsMessage = document.getElementById('content-fits');
+const doesntFitMessage = document.getElementById('content-doesnt-fit');
+const storage = window.localStorage;
+
+function getShowMargins() {
+  const showMarginsStorageValue = storage.getItem('showMargins');
+  let showMargins = false;
+  if (showMarginsStorageValue) {
+    showMargins = JSON.parse(showMarginsStorageValue);
+  }
+  return showMargins;
+}
+
+function setMarginElementsFromStorage() {
+  // sets it from local storage
+  const showMargins = getShowMargins();
+  marginLines!.hidden = !showMargins;
+  showMarginsInput!.checked = showMargins;
 }
 
 document.addEventListener('readystatechange', () => {
   if (document.readyState === 'complete') {
-    highlightBigElements();
+    setMarginElementsFromStorage();
+
+    showMarginsInput!.addEventListener('change', () => {
+      const showMargins = showMarginsInput.checked;
+      storage.setItem('showMargins', JSON.stringify(showMargins));
+      marginLines!.hidden = !showMargins;
+    });
+
+    if (highlightBigElements()) {
+      fitsMessage!.hidden = true;
+      doesntFitMessage!.hidden = false;
+    } else {
+      doesntFitMessage!.hidden = true;
+      fitsMessage!.hidden = false;
+    }
   }
 });
