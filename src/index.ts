@@ -32,9 +32,8 @@ function elementIsTooBig(element: Element, refElement: Element) {
 
   const rightBleeds = (refElementBR.right - elementBR.right) < 0;
   const bottomBleeds = (refElementBR.bottom - elementBR.bottom) < 0;
-  const doesntHaveChildren = element.childElementCount === 0;
 
-  return doesntHaveChildren && (rightBleeds || bottomBleeds);
+  return rightBleeds || bottomBleeds;
 }
 
 function highlightBigElements() {
@@ -44,7 +43,10 @@ function highlightBigElements() {
     throw new Error('couldn\'t find reference element');
   }
   document.querySelectorAll('#contents *').forEach((element) => {
-    if (elementIsTooBig(element, refElement)) {
+    // the above query selector will match on every elem in the dom that is a parent of the
+    // offending too-big elements. We don't want to highlight all of it, just the leaf
+    // children, so we test for childlessness on the next line.
+    if (elementIsTooBig(element, refElement) && element.childElementCount === 0) {
       hasBigElement = true;
       const e = element as HTMLElement;
       e.style.backgroundColor = '#d62728';
