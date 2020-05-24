@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const GenPDFPlugin = require('./GenPDFPlugin');
 
 module.exports = (env, argv) => ({
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
@@ -29,6 +29,9 @@ module.exports = (env, argv) => ({
       // enabled: argv.mode === 'production',
     }),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
       {
@@ -49,6 +52,11 @@ module.exports = (env, argv) => ({
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },

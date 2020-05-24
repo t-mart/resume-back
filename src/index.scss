@@ -1,10 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
-$sans-font: "IBM Plex Sans", sans-serif;
-$serif-font: "IBM Plex Serif", serif;
+$paper-height: 11in;
+$paper-width: 8.5in;
+$paper-margin: 0.5in;
 
-@page {
-  margin: 0.5in;
+$font-family: "IBM Plex Serif", serif;
+$font-size: 10pt; // font size
+$base-font-weight: 400;
+$bold-font-weight: 700;
+
+// Play with these if needed to minmax onto 1 page
+$line-height: 1.32rem; // vert dist between lines
+$vspacer: 0.33rem; // vert dist between various elements
+
+// 1in = 96px.
+// So, for pixel checking in devtools, here are some values
+// paper should be 816 x 1056
+// contents should be 720 x 960 (that is, paper size - 2 * margin)
+$contents-height: calc(#{$paper-height - 2 * $paper-margin});
+$contents-width: calc(#{$paper-width - 2 * $paper-margin});
+
+.paper {
+  height: $paper-height;
+  width: $paper-width;
+  padding: $paper-margin;
+  margin: 1rem auto;
+  border: 1px solid;
+  box-shadow: 4px 4px 0 gray;
+
+	@media print {
+		border: none;
+    box-shadow: none;
+    margin: 0;
+	}
+}
+
+.margin-lines {
+  border: 1px dotted #aaa;
+  height: $contents-height;
+  width: $contents-width;
+  position: absolute;
+  // make this a non-pointer-selectable element (otherwise, can't highlight text underneath)
+  pointer-events: none;  
+
+	@media print {
+		display: none;
+	}
+}
+
+.contents {
+  height: $contents-height;
+  width: $contents-width;
 }
 
 *,
@@ -14,21 +60,14 @@ $serif-font: "IBM Plex Serif", serif;
 }
 
 html {
-  font-size: 10pt;
-  font-family: $sans-font;
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+  font-weight: $base-font-weight;
 }
 
 body {
-  max-width: 7.5in;
-
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5rem;
+  margin: 0;
 }
 
 h1,
@@ -36,17 +75,18 @@ h2,
 h3,
 dt,
 .company-name {
-  font-family: $serif-font;
+  font-weight: $bold-font-weight;
 }
 
 ul, ol, dl {
   margin-block-start: 0;
   margin-block-end: 0;
+  list-style-type: disc;
 }
 
 .section-title, .section-content, .company  {
   margin-top: 0;
-  margin-bottom: 0.45rem;
+  margin-bottom: $vspacer
 }
 
 .mb-0 {
